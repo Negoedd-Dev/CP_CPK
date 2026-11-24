@@ -1,0 +1,12 @@
+// Dados fictícios só para demonstração (espessura de parede em mm, na ordem de medição).
+export const EXEMPLO = {
+  unidade: "mm",
+  lie: "8,02",
+  lse: "10,22",
+  medicoes: [
+    9.2, 9.34, 9.21, 9.19, 9.08, 9.21, 9.45, 9.33, 9.44, 9.29, 9.32, 10.31, 8.95, 9.4, 9.34,
+    9.34, 8.95, 8.94, 9.09, 9.17, 9.3, 9.24, 8.01, 9.13, 9.31, 9.32, 9.13, 9.56, 9.35, 9.47,
+  ]
+    .map((v) => String(v).replace(".", ","))
+    .join("\n"),
+};
