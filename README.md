@@ -1,16 +1,58 @@
-# React + Vite
+# Cp e Cpk com carta de controle
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Calcula os índices de capabilidade de um processo a partir de medições e desenha a carta de valores individuais, com limites de especificação e de controle.
 
-Currently, two official plugins are available:
+![Tela do projeto](docs/tela.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+**Demo:** _(https://cp-cpk-five.vercel.app/)_
 
-## React Compiler
+## Por que criei
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Na inspeção de qualidade em siderurgia, as medições de um lote só dizem alguma coisa quando comparadas com a especificação e com a variação do processo. Criei esta ferramenta para ver isso de forma rápida e visual. Também faz parte dos meus estudos de desenvolvimento web com React.
 
-## Expanding the Oxlint configuration
+## O que ele faz
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+- Entrada das medições e dos limites de especificação (LIE e LSE).
+- Cp, Cpk, Pp e Ppk.
+- Estimativa de ppm fora da especificação.
+- Carta de valores individuais (SVG) com os limites de controle.
+
+## Como calcula
+
+```
+Cp  = (LSE − LIE) / 6σ
+Cpk = min((LSE − μ) / 3σ, (μ − LIE) / 3σ)
+σ (curto prazo) = MR̄ / 1,128      (MR̄: média das amplitudes móveis)
+Pp, Ppk: mesma forma, usando o desvio padrão amostral (s)
+Limites de controle: μ ± 2,66 · MR̄
+```
+
+A estimativa de ppm usa a distribuição normal.
+
+## Tecnologias
+
+React, Vite, JavaScript, CSS, SVG.
+
+## Como rodar
+
+Requisito: [Node.js](https://nodejs.org) 18 ou superior.
+
+```bash
+git clone https://github.com/Negoedd-Dev/cp-cpk
+cd cp-cpk
+npm install
+npm run dev
+```
+
+Abra o endereço que aparecer no terminal (normalmente http://localhost:5173).
+Sem o Git, baixe o ZIP pelo botão verde **Code** desta página.
+
+## Observações
+
+- Os índices assumem dados aproximadamente normais e processo estável. Confira a carta de controle antes de confiar no resultado.
+- Quanto mais medições, mais confiável a estimativa. Com poucas amostras, trate o número como indicativo.
+- Os dados de exemplo são fictícios.
+
+## Autor
+
+Negoedd · [LinkedIn](https://www.linkedin.com/in/edson-nunes)
