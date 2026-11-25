@@ -1,0 +1,364 @@
+.cpk {
+  --cpk-texto: #12304f;
+  --cpk-secundario: #455d78;
+  --cpk-grade: #d6e2ef;
+  --cpk-serie: #2a78d6;
+  --cpk-critico: #d03b3b;
+  --cpk-bom: #006300;
+  --cpk-atencao: #7a5200;
+
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  color: var(--cpk-texto);
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 14px;
+}
+
+.cpk h2 {
+  margin-bottom: 14px;
+  font-size: 1.25rem;
+}
+
+.cpk-grade {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 20px;
+}
+
+.cpk-form,
+.cpk-saida {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.cpk-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.cpk-linha3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.7fr;
+  gap: 10px;
+}
+
+.cpk input,
+.cpk textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 8px 10px;
+  font: inherit;
+  color: var(--cpk-texto);
+  background: #fff;
+  border: 1px solid #7e97b3;
+  border-radius: 8px;
+}
+
+.cpk textarea {
+  resize: vertical;
+  font-family: Consolas, monospace;
+}
+
+.cpk input:focus-visible,
+.cpk textarea:focus-visible {
+  outline: 2px solid #3f6a9f;
+  outline-offset: 1px;
+}
+
+.cpk button {
+  padding: 7px 14px;
+  font: inherit;
+  font-size: 0.9rem;
+  color: var(--cpk-texto);
+  background: #fff;
+  border: 1px solid var(--cpk-texto);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.cpk-botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cpk-dica {
+  margin-top: -4px;
+  font-size: 0.75rem;
+  color: var(--cpk-secundario);
+}
+
+.cpk-erro {
+  padding: 8px 12px;
+  font-weight: 600;
+  color: #7a1b1b;
+  background: #fbe4e4;
+  border-radius: 6px;
+}
+
+.cpk-aviso-valores {
+  padding: 6px 10px;
+  font-size: 0.85rem;
+  color: #5c3d00;
+  background: #fff1cf;
+  border-radius: 6px;
+}
+
+.cpk-vazio {
+  color: var(--cpk-secundario);
+}
+
+.cpk-resumo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 8px;
+}
+
+.cpk-resumo div {
+  padding: 6px 10px;
+  background: #eaf3fc;
+  border-left: 4px solid #3f6a9f;
+  border-radius: 6px;
+}
+
+.cpk-resumo dt {
+  font-size: 0.75rem;
+  color: var(--cpk-secundario);
+}
+
+.cpk-resumo dd {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.cpk-indices {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cpk-indices th,
+.cpk-indices td {
+  padding: 8px 6px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--cpk-grade);
+}
+
+.cpk-indices th small {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: var(--cpk-secundario);
+}
+
+.cpk-nome {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--cpk-secundario);
+}
+
+.cpk-indices strong {
+  font-size: 1.3rem;
+}
+
+.cpk-situacao {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 999px;
+}
+
+.cpk-capaz {
+  color: var(--cpk-bom);
+  background: #dff3df;
+}
+
+.cpk-marginal {
+  color: var(--cpk-atencao);
+  background: #fff1cf;
+}
+
+.cpk-incapaz {
+  color: #8c1f1f;
+  background: #fbe4e4;
+}
+
+.cpk-ppm {
+  font-size: 0.9rem;
+}
+
+.cpk-copiar {
+  align-self: flex-start;
+}
+
+.cpk-nota {
+  margin-top: 16px;
+  font-size: 0.78rem;
+  color: var(--cpk-secundario);
+}
+
+/* ---- gráfico ---- */
+.cpk-grafico {
+  margin: 18px 0 0;
+}
+
+.cpk-grafico-rolagem {
+  overflow-x: auto;
+}
+
+.cpk-grafico svg {
+  display: block;
+  width: 100%;
+  min-width: 600px;
+  height: auto;
+  overflow: visible;
+}
+
+.cpk-grade-linha,
+.cpk-grafico .cpk-grade {
+  stroke: var(--cpk-grade);
+  stroke-width: 1;
+}
+
+.cpk-eixo {
+  font-size: 11px;
+  fill: var(--cpk-secundario);
+}
+
+.cpk-rotulo {
+  font-size: 11px;
+  fill: var(--cpk-texto);
+}
+
+.cpk-linha-espec {
+  stroke: var(--cpk-critico);
+  stroke-width: 2;
+  stroke-dasharray: 6 4;
+}
+
+.cpk-linha-controle {
+  stroke: #6f8197;
+  stroke-width: 1.5;
+  stroke-dasharray: 2 4;
+}
+
+.cpk-linha-media {
+  stroke: var(--cpk-secundario);
+  stroke-width: 1.5;
+}
+
+.cpk-serie {
+  fill: none;
+  stroke: var(--cpk-serie);
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+
+.cpk-ponto {
+  fill: var(--cpk-serie);
+  stroke: #fff;
+  stroke-width: 2;
+}
+
+.cpk-ponto-fora {
+  fill: var(--cpk-critico);
+  stroke: #fff;
+  stroke-width: 2;
+}
+
+.cpk-anel {
+  fill: none;
+  stroke: #455d78;
+  stroke-width: 1.5;
+}
+
+.cpk-balao rect {
+  fill: #12304f;
+}
+
+.cpk-balao-valor {
+  font-size: 13px;
+  font-weight: 700;
+  fill: #fff;
+}
+
+.cpk-balao-texto {
+  font-size: 11px;
+  fill: #dbe7f5;
+}
+
+.cpk-grafico circle[tabindex]:focus-visible {
+  outline: 2px solid #3f6a9f;
+}
+
+.cpk-legenda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  margin-top: 6px;
+  font-size: 0.8rem;
+  color: var(--cpk-secundario);
+}
+
+.cpk-chave {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 5px;
+  vertical-align: -1px;
+}
+
+.cpk-chave-ponto {
+  background: var(--cpk-serie);
+  border-radius: 50%;
+}
+
+.cpk-chave-fora {
+  background: var(--cpk-critico);
+}
+
+.cpk-chave-anel {
+  border: 1.5px solid #455d78;
+  border-radius: 50%;
+}
+
+.cpk-tabela {
+  margin-top: 10px;
+  font-size: 0.85rem;
+}
+
+.cpk-tabela summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.cpk-tabela-rolagem {
+  max-height: 220px;
+  margin-top: 6px;
+  overflow-y: auto;
+}
+
+.cpk-tabela table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cpk-tabela th,
+.cpk-tabela td {
+  padding: 3px 8px;
+  text-align: left;
+  border-bottom: 1px solid var(--cpk-grade);
+}
+
+@media (max-width: 760px) {
+  .cpk-grade {
+    grid-template-columns: 1fr;
+  }
+}
